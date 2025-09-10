@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Beranda - UKM Pencak Silat UM</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+  <style>
+    body { font-family: 'Poppins', Arial, sans-serif; }
+    .fade-in { animation: fadeIn 0.9s; }
+    @keyframes fadeIn { from {opacity:0;transform:translateY(30px);} to {opacity:1;transform:translateY(0);} }
+    .floating-btn {
+      position: fixed; bottom: 22px; right: 22px; z-index: 999;
+      background: linear-gradient(135deg,#facc15 60%,#eab308 100%);
+      color: #fff; border-radius: 50%; width: 52px; height: 52px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; box-shadow: 0 4px 16px 0 rgba(0,0,0,0.18);
+      transition:box-shadow .2s,background .2s;
+    }
+    .floating-btn:hover { background: #eab308; box-shadow:0 6px 18px 0 rgba(0,0,0,0.22);}
+    .nav-mobile-overlay {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(253, 224, 71, 0.8); z-index: 49; display: none;
+    }
+    .nav-mobile.active ~ .nav-mobile-overlay {display: block;}
+  </style>
+</head>
+<body class="bg-yellow-50 text-gray-800">
+  <!-- Navbar -->
+  <nav class="fixed w-full bg-yellow-300/95 shadow-md z-50">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <img src="logo_ukm-removebg-preview.png" alt="Logo UKM" class="w-11 h-11 sm:w-12 sm:h-12 rounded-full border-2 border-yellow-400 bg-white"/>
+        <span class="font-bold text-lg text-gray-900 tracking-wide">UKM <span class="text-yellow-600">PENCAK SILAT</span></span>
+      </div>
+      <ul class="hidden md:flex space-x-5 font-semibold text-gray-700">
+        <li><a href="index.html" class="text-yellow-700 font-bold underline">Beranda</a></li>
+        <li><a href="tentang%20kami.html" class="hover:text-yellow-700 transition">Tentang Kami</a></li>
+        <li><a href="struktur%20organisasi.html" class="hover:text-yellow-700 transition">Struktur</a></li>
+        <li><a href="kegiatan.html" class="hover:text-yellow-700 transition">Kegiatan</a></li>
+        <li><a href="galeri.html" class="hover:text-yellow-700 transition">Galeri</a></li>
+        <li><a href="kontak.html" class="hover:text-yellow-700 transition">Kontak</a></li>
+      </ul>
+      <!-- Hamburger Menu -->
+      <button class="md:hidden text-yellow-700 cursor-pointer py-2 px-3 rounded-lg active:bg-yellow-200 focus:ring-2 focus:ring-yellow-400 z-50" id="menu-btn" aria-label="Buka menu">
+        <i class="fas fa-bars fa-2x"></i>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="nav-mobile hidden md:hidden bg-yellow-200 shadow-lg fixed top-0 left-0 w-4/5 max-w-xs h-full z-50 transition-transform duration-300">
+      <ul class="flex flex-col py-8 px-8 space-y-4 font-semibold text-gray-800 text-lg">
+        <li><a href="index.html" class="block w-full py-3 px-4 rounded-lg text-yellow-700 font-bold underline nav-link active:bg-yellow-300 focus:ring-2 focus:ring-yellow-400">Beranda</a></li>
+        <li><a href="tentang%20kami.html" class="block w-full py-3 px-4 rounded-lg hover:text-yellow-700 transition nav-link active:bg-yellow-300 focus:ring-2 focus:ring-yellow-400">Tentang Kami</a></li>
+        <li><a href="struktur%20organisasi.html" class="block w-full py-3 px-4 rounded-lg hover:text-yellow-700 transition nav-link active:bg-yellow-300 focus:ring-2 focus:ring-yellow-400">Struktur</a></li>
+        <li><a href="kegiatan.html" class="block w-full py-3 px-4 rounded-lg hover:text-yellow-700 transition nav-link active:bg-yellow-300 focus:ring-2 focus:ring-yellow-400">Kegiatan</a></li>
+        <li><a href="galeri.html" class="block w-full py-3 px-4 rounded-lg hover:text-yellow-700 transition nav-link active:bg-yellow-300 focus:ring-2 focus:ring-yellow-400">Galeri</a></li>
+        <li><a href="kontak.html" class="block w-full py-3 px-4 rounded-lg hover:text-yellow-700 transition nav-link active:bg-yellow-300 focus:ring-2 focus:ring-yellow-400">Kontak</a></li>
+      </ul>
+    </div>
+    <div class="nav-mobile-overlay"></div>
+  </nav>
+
+  <main class="pt-20 pb-10 min-h-screen bg-yellow-50">
+    <section class="section py-8 fade-in">
+      <div class="container mx-auto px-2 sm:px-4 max-w-6xl">
+        <h2 class="text-center text-2xl font-extrabold text-yellow-700 mb-10 tracking-wide">Struktur Organisasi UKM Pencak Silat UM</h2>
+        <!-- Pembina -->
+        <div class="mb-10 flex flex-col items-center">
+          <div class="bg-white shadow-lg rounded-2xl p-5 flex flex-col items-center w-full sm:w-1/2 md:w-1/3">
+            <img src="logo_ukm-removebg-preview.png" alt="Foto Pembina" class="w-24 h-24 object-cover rounded-full mb-2 border-4 border-yellow-100">
+            <h3 class="font-bold text-yellow-800 mb-1">Pembina</h3>
+            <p class="text-gray-700 font-semibold mb-0.5">Puji Tri Aryanti, M.Pd</p>
+          </div>
+        </div>
+        <!-- Inti -->
+        <h3 class="text-lg font-bold text-yellow-700 mb-3 text-center w-full">Pengurus Inti</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mb-10">
+          <div class="bg-white shadow rounded-xl p-5 flex flex-col items-center">
+            <img src="galih.jpg" class="w-20 h-20 object-cover rounded-full mb-2" alt="Ketua Umum">
+            <span class="font-bold text-yellow-700">Galih Kusuma Dewa</span>
+            <span class="text-xs text-gray-500">Ketua Umum</span>
+            <span class="text-xs text-gray-700">21020611003</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-5 flex flex-col items-center">
+            <img src="layla2.jpg" class="w-20 h-20 object-cover rounded-full mb-2" alt="Wakil Ketua">
+            <span class="font-bold text-yellow-700">Fitria Laila Rohmah</span>
+            <span class="text-xs text-gray-500">Wakil Ketua Umum</span>
+            <span class="text-xs text-gray-700">21020511021</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-5 flex flex-col items-center">
+            <img src="rahmi2.jpg" class="w-20 h-20 object-cover rounded-full mb-2" alt="Sekretaris 1">
+            <span class="font-bold text-yellow-700">Rahmi Safiri</span>
+            <span class="text-xs text-gray-500">Sekretaris 1</span>
+            <span class="text-xs text-gray-700">22042511045</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-5 flex flex-col items-center">
+            <img src="citralosa.jpg" class="w-20 h-20 object-cover rounded-full mb-2" alt="Sekretaris 2">
+            <span class="font-bold text-yellow-700">Citra Losa Ismail</span>
+            <span class="text-xs text-gray-500">Sekretaris 2</span>
+            <span class="text-xs text-gray-700">23042211005</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-5 flex flex-col items-center">
+            <img src="ozi.jpg" class="w-20 h-20 object-cover rounded-full mb-2" alt="Bendahara 1">
+            <span class="font-bold text-yellow-700">Oziputri</span>
+            <span class="text-xs text-gray-500">Bendahara 1</span>
+            <span class="text-xs text-gray-700">24042811132</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-5 flex flex-col items-center">
+            <img src="amel.jpg" class="w-20 h-20 object-cover rounded-full mb-2" alt="Bendahara 2">
+            <span class="font-bold text-yellow-700">Amelia Permata Dewi</span>
+            <span class="text-xs text-gray-500">Bendahara 2</span>
+            <span class="text-xs text-gray-700">24042131008</span>
+          </div>
+        </div>
+        <!-- Pendidikan -->
+        <h3 class="text-lg font-bold text-yellow-700 mb-3 text-center w-full">Bidang Pendidikan</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 mb-10">
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="yeni2.jpg" class="w-16 h-16 object-cover rounded-full mb-1" alt="Koordinator Pendidikan">
+            <span class="font-bold text-yellow-700">Yeni Fitriani</span>
+            <span class="text-xs text-gray-500">Koordinator</span>
+            <span class="text-xs text-gray-700">24042711013</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="yuni.jpg" class="w-16 h-16 object-cover rounded-full mb-1" alt="Yuni Nur Anisa">
+            <span class="font-bold text-yellow-700">Yuni Nur Anisa</span>
+            <span class="text-xs text-gray-500">Anggota</span>
+            <span class="text-xs text-gray-700">24042611019</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="ari saputra.jpg" class="w-16 h-16 object-cover rounded-full mb-1" alt="Ari Saputra">
+            <span class="font-bold text-yellow-700">Ari Saputra</span>
+            <span class="text-xs text-gray-500">Anggota</span>
+            <span class="text-xs text-gray-700">24042511053</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="logo_ukm-removebg-preview.png" class="w-16 h-16 object-cover rounded-full mb-1" alt="Ari Ardiansyah">
+            <span class="font-bold text-yellow-700">Ari Ardiansyah</span>
+            <span class="text-xs text-gray-500">Anggota</span>
+            <span class="text-xs text-gray-700">24042331005</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="logo_ukm-removebg-preview.png" class="w-16 h-16 object-cover rounded-full mb-1" alt="Verdi">
+            <span class="font-bold text-yellow-700">Verdi</span>
+            <span class="text-xs text-gray-500">Anggota</span>
+            <span class="text-xs text-gray-700">23042511044</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="herki.jpg" class="w-16 h-16 object-cover rounded-full mb-1" alt="Herki">
+            <span class="font-bold text-yellow-700">Herki</span>
+            <span class="text-xs text-gray-500">Anggota</span>
+            <span class="text-xs text-gray-700">24042511059</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="angelia.jpg" class="w-16 h-16 object-cover rounded-full mb-1" alt="Anglia Tiara Komaisiah">
+            <span class="font-bold text-yellow-700">Anglia Tiara Komaisiah</span>
+            <span class="text-xs text-gray-500">Anggota</span>
+            <span class="text-xs text-gray-700">24042211005</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="logo_ukm-removebg-preview.png" class="w-16 h-16 object-cover rounded-full mb-1" alt="Siva Nurlaila">
+            <span class="font-bold text-yellow-700">Siva Nurlaila</span>
+            <span class="text-xs text-gray-500">Anggota</span>
+            <span class="text-xs text-gray-700">24042811078</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="jelita2.jpg" class="w-16 h-16 object-cover rounded-full mb-1" alt="Jelita">
+            <span class="font-bold text-yellow-700">Jelita</span>
+            <span class="text-xs text-gray-500">Anggota</span>
+            <span class="text-xs text-gray-700">24042811215</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="abdoro3.jpg" class="w-16 h-16 object-cover rounded-full mb-1" alt="Andoro">
+            <span class="font-bold text-yellow-700">Andoro</span>
+            <span class="text-xs text-gray-500">Anggota</span>
+            <span class="text-xs text-gray-700">24042611019</span>
+          </div>
+        </div>
+        <!-- Humas & Publikasi -->
+        <h3 class="text-lg font-bold text-yellow-700 mb-3 text-center w-full">Bidang Humas & Publikasi</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 mb-10">
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="riska.jpg" class="w-16 h-16 object-cover rounded-full mb-1" alt="Koordinator Humas">
+            <span class="font-bold text-yellow-700">Rizka Sri Septia</span>
+            <span class="text-xs text-gray-500">Koordinator</span>
+            <span class="text-xs text-gray-700">22042511052</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="logo_ukm-removebg-preview.png" class="w-16 h-16 object-cover rounded-full mb-1" alt="Satria Danang Wijanarko">
+            <span class="font-bold text-yellow-700">Satria Danang Wijanarko</span>
+            <span class="text-xs text-gray-500">Anggota</span>
+            <span class="text-xs text-gray-700">22042131021</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="logo_ukm-removebg-preview.png" class="w-16 h-16 object-cover rounded-full mb-1" alt="Abel Aira Putra">
+            <span class="font-bold text-yellow-700">Abel Aira Putra</span>
+            <span class="text-xs text-gray-500">Anggota</span>
+            <span class="text-xs text-gray-700">22042131001</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="nisa.jpg" class="w-16 h-16 object-cover rounded-full mb-1" alt="Asma Chairunnisa">
+            <span class="font-bold text-yellow-700">Asma Chairunnisa</span>
+            <span class="text-xs text-gray-500">Anggota</span>
+            <span class="text-xs text-gray-700">22042131003</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="logo_ukm-removebg-preview.png" class="w-16 h-16 object-cover rounded-full mb-1" alt="Erlia Seftiani">
+            <span class="font-bold text-yellow-700">Erlia Seftiani</span>
+            <span class="text-xs text-gray-500">Anggota</span>
+            <span class="text-xs text-gray-700">24042211017</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="arya2.jpg" class="w-16 h-16 object-cover rounded-full mb-1" alt="M Aria Amirullah">
+            <span class="font-bold text-yellow-700">M Aria Amirullah</span>
+            <span class="text-xs text-gray-500">Anggota</span>
+            <span class="text-xs text-gray-700">22042121012</span>
+          </div>
+        </div>
+        <!-- Prestasi -->
+        <h3 class="text-lg font-bold text-yellow-700 mb-3 text-center w-full">Bidang Pembinaan Atlit & Prestasi</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 mb-10">
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="leli2.jpg" class="w-16 h-16 object-cover rounded-full mb-1" alt="Koordinator Prestasi">
+            <span class="font-bold text-yellow-700">Leli Puji Astuti</span>
+            <span class="text-xs text-gray-500">Koordinator</span>
+            <span class="text-xs text-gray-700">24042211009</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="nayla.jpg" class="w-16 h-16 object-cover rounded-full mb-1" alt="Syifa nurlaila">
+            <span class="font-bold text-yellow-700">Syifa nurlaila</span>
+            <span class="text-xs text-gray-500">Anggota</span>
+            <span class="text-xs text-gray-700">24042811171</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="logo_ukm-removebg-preview.png" class="w-16 h-16 object-cover rounded-full mb-1" alt="Bunga Fitri Rohmadani">
+            <span class="font-bold text-yellow-700">Bunga Fitri Rohmadani</span>
+            <span class="text-xs text-gray-500">Anggota</span>
+            <span class="text-xs text-gray-700">24042211009</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="logo_ukm-removebg-preview.png" class="w-16 h-16 object-cover rounded-full mb-1" alt="Elsa Sevira Anatasya">
+            <span class="font-bold text-yellow-700">Elsa Sevira Anatasya</span>
+            <span class="text-xs text-gray-500">Anggota</span>
+            <span class="text-xs text-gray-700">23042211027</span>
+          </div>
+        </div>
+        <!-- Kerohanian -->
+        <h3 class="text-lg font-bold text-yellow-700 mb-3 text-center w-full">Bidang Kerohanian</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 mb-10">
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="aji saputro.jpg" class="w-16 h-16 object-cover rounded-full mb-1" alt="Koordinator Kerohanian">
+            <span class="font-bold text-yellow-700">Aji Saputro</span>
+            <span class="text-xs text-gray-500">Koordinator</span>
+            <span class="text-xs text-gray-700">21020411001</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="sela2.jpg" class="w-16 h-16 object-cover rounded-full mb-1" alt="Shela Ayu Ardiyanti">
+            <span class="font-bold text-yellow-700">Shela Ayu Ardiyanti</span>
+            <span class="text-xs text-gray-500">Anggota</span>
+            <span class="text-xs text-gray-700">22042611009</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="ulfa.jpg" class="w-16 h-16 object-cover rounded-full mb-1" alt="Ulva Kurnia Dewi">
+            <span class="font-bold text-yellow-700">Ulva Kurnia Dewi</span>
+            <span class="text-xs text-gray-500">Anggota</span>
+            <span class="text-xs text-gray-700">23042211023</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="andry2.jpg" class="w-16 h-16 object-cover rounded-full mb-1" alt="Andri Darmawansyah">
+            <span class="font-bold text-yellow-700">Andri Darmawansyah</span>
+            <span class="text-xs text-gray-500">Anggota</span>
+            <span class="text-xs text-gray-700">21020611002</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="huda.jpg" class="w-16 h-16 object-cover rounded-full mb-1" alt="Misbahul Huda">
+            <span class="font-bold text-yellow-700">Misbahul Huda</span>
+            <span class="text-xs text-gray-500">Anggota</span>
+            <span class="text-xs text-gray-700">22042411010</span>
+          </div>
+        </div>
+        <!-- Sosial Masyarakat -->
+        <h3 class="text-lg font-bold text-yellow-700 mb-3 text-center w-full">Bidang Sosial & Masyarakat</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 mb-10">
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="yunita2.jpg" class="w-16 h-16 object-cover rounded-full mb-1" alt="Koordinator Sosmas">
+            <span class="font-bold text-yellow-700">Yunita Pebriana</span>
+            <span class="text-xs text-gray-500">Koordinator</span>
+            <span class="text-xs text-gray-700">22042211025</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="evasiam.jpg" class="w-16 h-16 object-cover rounded-full mb-1" alt="Eva Siam Nopitasari">
+            <span class="font-bold text-yellow-700">Eva Siam Nopitasari</span>
+            <span class="text-xs text-gray-500">Anggota</span>
+            <span class="text-xs text-gray-700">22042811034</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="sulastri2.jpg" class="w-16 h-16 object-cover rounded-full mb-1" alt="Sulastri">
+            <span class="font-bold text-yellow-700">Sulastri</span>
+            <span class="text-xs text-gray-500">Anggota</span>
+            <span class="text-xs text-gray-700">22042611011</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="tegar2 (2).jpg" class="w-16 h-16 object-cover rounded-full mb-1" alt="Tegar Riski Yulianto">
+            <span class="font-bold text-yellow-700">Tegar Riski Yulianto</span>
+            <span class="text-xs text-gray-500">Anggota</span>
+            <span class="text-xs text-gray-700">2042611013</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="logo_ukm-removebg-preview.png" class="w-16 h-16 object-cover rounded-full mb-1" alt="Annisa Ur Rofiqoh">
+            <span class="font-bold text-yellow-700">Annisa Ur Rofiqoh</span>
+            <span class="text-xs text-gray-500">Anggota</span>
+            <span class="text-xs text-gray-700">24042211006</span>
+          </div>
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col items-center">
+            <img src="logo_ukm-removebg-preview.png" class="w-16 h-16 object-cover rounded-full mb-1" alt="Jota Putra Tania">
+            <span class="font-bold text-yellow-700">Jota Putra Tania</span>
+            <span class="text-xs text-gray-500">Anggota</span>
+            <span class="text-xs text-gray-700">24042131008</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <a href="https://wa.me/6281234567890" class="floating-btn active:scale-95 focus:ring-4 focus:ring-yellow-300" title="Hubungi via WhatsApp" style="touch-action: manipulation;">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <script>
+    document.getElementById('menu-btn').addEventListener('click', function() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      const overlay = document.querySelector('.nav-mobile-overlay');
+      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('active');
+      overlay.style.display = mobileMenu.classList.contains('active') ? 'block' : 'none';
+    });
+    document.querySelector('.nav-mobile-overlay').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.add('hidden');
+      document.getElementById('mobile-menu').classList.remove('active');
+      this.style.display = 'none';
+    });
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        const overlay = document.querySelector('.nav-mobile-overlay');
+        if(mobileMenu.classList.contains('active')) {
+          mobileMenu.classList.add('hidden');
+          mobileMenu.classList.remove('active');
+          overlay.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+  <!-- Footer -->
+  <footer class="bg-yellow-700 text-yellow-100 py-8 mt-12">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <p>© 2024 UKM Pencak Silat Universitas Merangin. Seluruh hak cipta dilindungi.</p>
+      <div class="flex justify-center space-x-6 mt-2">
+        <a href="https://www.instagram.com/ukmpencaksilat_um" class="hover:text-yellow-300"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/share/1GP2gioues/" class="hover:text-yellow-300"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.tiktok.com/@ukm.pencak.silat22?_t=ZS-8xDjkCism7J&_r=1" class="hover:text-yellow-300"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </footer>
+  <!-- Floating Button -->
+  <a href="https://wa.me/6281234567890" class="floating-btn" title="Hubungi via WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <script>
+    // Hamburger menu toggle
+    document.getElementById('menu-btn').addEventListener('click', function(e) {
+      e.stopPropagation();
+      const mobileMenu = document.getElementById('mobile-menu');
+      const overlay = document.querySelector('.nav-mobile-overlay');
+      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('active');
+      overlay.style.display = mobileMenu.classList.contains('active') ? 'block' : 'none';
+    });
+
+    // Close menu when overlay is clicked
+    document.querySelector('.nav-mobile-overlay').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.add('hidden');
+      document.getElementById('mobile-menu').classList.remove('active');
+      this.style.display = 'none';
+    });
+
+    // Close menu when a menu link is clicked (on mobile)
+    document.querySelectorAll('#mobile-menu .nav-link').forEach(link => {
+      link.addEventListener('click', function() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        const overlay = document.querySelector('.nav-mobile-overlay');
+        if(mobileMenu.classList.contains('active')) {
+          mobileMenu.classList.add('hidden');
+          mobileMenu.classList.remove('active');
+          overlay.style.display = 'none';
+        }
+      });
+    });
+
+    // Optional: Close mobile menu if click outside menu and button (extra safety for UX)
+    document.addEventListener('click', function(e) {
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuBtn = document.getElementById('menu-btn');
+      const overlay = document.querySelector('.nav-mobile-overlay');
+      if (
+        mobileMenu.classList.contains('active') &&
+        !mobileMenu.contains(e.target) &&
+        e.target !== menuBtn &&
+        !menuBtn.contains(e.target)
+      ) {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('active');
+        overlay.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

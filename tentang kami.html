@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Beranda - UKM Pencak Silat UM</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+  <style>
+    body { font-family: 'Poppins', Arial, sans-serif; }
+    .fade-in { animation: fadeIn 0.9s; }
+    @keyframes fadeIn { from {opacity:0;transform:translateY(30px);} to {opacity:1;transform:translateY(0);} }
+    .floating-btn {
+      position: fixed; bottom: 22px; right: 22px; z-index: 999;
+      background: linear-gradient(135deg,#facc15 60%,#eab308 100%);
+      color: #fff; border-radius: 50%; width: 52px; height: 52px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; box-shadow: 0 4px 16px 0 rgba(0,0,0,0.18);
+      transition:box-shadow .2s,background .2s;
+    }
+    .floating-btn:hover { background: #eab308; box-shadow:0 6px 18px 0 rgba(0,0,0,0.22);}
+    .nav-mobile-overlay {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(253, 224, 71, 0.8); z-index: 49; display: none;
+    }
+    .nav-mobile.active ~ .nav-mobile-overlay {display: block;}
+  </style>
+</head>
+<body class="bg-yellow-50 text-gray-800">
+  <!-- Navbar -->
+  <nav class="fixed w-full bg-yellow-300/95 shadow-md z-50">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <img src="logo_ukm-removebg-preview.png" alt="Logo UKM" class="w-11 h-11 sm:w-12 sm:h-12 rounded-full border-2 border-yellow-400 bg-white"/>
+        <span class="font-bold text-lg text-gray-900 tracking-wide">UKM <span class="text-yellow-600">PENCAK SILAT</span></span>
+      </div>
+      <ul class="hidden md:flex space-x-5 font-semibold text-gray-700">
+        <li><a href="index.html" class="text-yellow-700 font-bold underline">Beranda</a></li>
+        <li><a href="tentang%20kami.html" class="hover:text-yellow-700 transition">Tentang Kami</a></li>
+        <li><a href="struktur%20organisasi.html" class="hover:text-yellow-700 transition">Struktur</a></li>
+        <li><a href="kegiatan.html" class="hover:text-yellow-700 transition">Kegiatan</a></li>
+        <li><a href="galeri.html" class="hover:text-yellow-700 transition">Galeri</a></li>
+        <li><a href="kontak.html" class="hover:text-yellow-700 transition">Kontak</a></li>
+      </ul>
+      <!-- Hamburger Menu -->
+      <button class="md:hidden text-yellow-700 cursor-pointer py-2 px-3 rounded-lg active:bg-yellow-200 focus:ring-2 focus:ring-yellow-400 z-50" id="menu-btn" aria-label="Buka menu">
+        <i class="fas fa-bars fa-2x"></i>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="nav-mobile hidden md:hidden bg-yellow-200 shadow-lg fixed top-0 left-0 w-4/5 max-w-xs h-full z-50 transition-transform duration-300">
+      <ul class="flex flex-col py-8 px-8 space-y-4 font-semibold text-gray-800 text-lg">
+        <li><a href="index.html" class="block w-full py-3 px-4 rounded-lg text-yellow-700 font-bold underline nav-link active:bg-yellow-300 focus:ring-2 focus:ring-yellow-400">Beranda</a></li>
+        <li><a href="tentang%20kami.html" class="block w-full py-3 px-4 rounded-lg hover:text-yellow-700 transition nav-link active:bg-yellow-300 focus:ring-2 focus:ring-yellow-400">Tentang Kami</a></li>
+        <li><a href="struktur%20organisasi.html" class="block w-full py-3 px-4 rounded-lg hover:text-yellow-700 transition nav-link active:bg-yellow-300 focus:ring-2 focus:ring-yellow-400">Struktur</a></li>
+        <li><a href="kegiatan.html" class="block w-full py-3 px-4 rounded-lg hover:text-yellow-700 transition nav-link active:bg-yellow-300 focus:ring-2 focus:ring-yellow-400">Kegiatan</a></li>
+        <li><a href="galeri.html" class="block w-full py-3 px-4 rounded-lg hover:text-yellow-700 transition nav-link active:bg-yellow-300 focus:ring-2 focus:ring-yellow-400">Galeri</a></li>
+        <li><a href="kontak.html" class="block w-full py-3 px-4 rounded-lg hover:text-yellow-700 transition nav-link active:bg-yellow-300 focus:ring-2 focus:ring-yellow-400">Kontak</a></li>
+      </ul>
+    </div>
+    <div class="nav-mobile-overlay"></div>
+  </nav>
+  <main class="pt-20 pb-10 min-h-screen bg-yellow-50">
+    <section class="py-10 fade-in">
+      <div class="container mx-auto max-w-xl px-3">
+        <div class="bg-white/95 card-shadow rounded-2xl py-8 px-6 flex flex-col items-center text-center">
+          <!-- FOTO BUNDAR -->
+          <div class="relative mb-6">
+            <img src="foto.jpg" alt="Anggota UKM Pencak Silat Universitas Merangin" class="w-40 h-40 sm:w-48 sm:h-48 object-cover rounded-full border-4 border-yellow-300 shadow-lg mx-auto">
+            <div class="absolute bottom-2 left-1/2 -translate-x-1/2 bg-yellow-600/90 text-white text-xs font-semibold rounded-full px-5 py-1 shadow"></div>
+          </div>
+          <!-- JUDUL DAN DESKRIPSI -->
+          <h2 class="text-2xl md:text-3xl font-extrabold text-yellow-700 mb-1 tracking-wide">Tentang Kami</h2>
+          <div class="section-divider"></div>
+          <div class="mb-4 text-base text-gray-700 leading-relaxed text-justify">
+            <span class="font-bold text-yellow-700">UKM Pencak Silat Universitas Merangin</span> merupakan wadah pengembangan diri mahasiswa yang berfokus pada pelestarian dan pengembangan seni bela diri tradisional <span class="italic font-semibold">pencak silat</span>. Kami mengedepankan nilai sportivitas, persaudaraan, prestasi, dan cinta budaya Indonesia.
+          </div>
+          <div class="mb-3">
+            <ul class="about-list text-sm text-justify text-gray-800 px-3">
+              <li><span>Berdiri:</span> 23 Oktober 2024, berawal dari inisiatif mahasiswa yang peduli akan budaya dan olahraga.</li>
+              <li><span>Dasar hukum:</span> SK Rektor & AD/ART organisasi.</li>
+              <li><span>Anggota:</span> Mahasiswa lintas fakultas, terbuka untuk semua yang ingin berkembang.</li>
+            </ul>
+          </div>
+          <div class="mb-4">
+            <h3 class="font-bold text-yellow-700 mb-1">Visi</h3>
+            <p class="text-gray-800 text-sm leading-relaxed">Menjadi pusat pembinaan mahasiswa yang berprestasi dan berkarakter melalui pencak silat serta pelestarian budaya di lingkungan Universitas Merangin.</p>
+          </div>
+          <div class="mb-4">
+            <h3 class="font-bold text-yellow-700 mb-1">Misi</h3>
+            <ul class="list-decimal list-inside text-sm text-gray-800 ml-3 text-justify">
+              <li>Mendorong latihan rutin dan peningkatan teknik, fisik, serta mental anggota.</li>
+              <li>Aktif melestarikan dan memperkenalkan pencak silat sebagai warisan budaya.</li>
+              <li>Menumbuhkan solidaritas, sportivitas, dan jiwa kepemimpinan.</li>
+              <li>Mengukir prestasi di berbagai ajang, baik tingkat kampus maupun eksternal.</li>
+            </ul>
+          </div>
+          <div class="mb-4">
+            <h3 class="font-bold text-yellow-700 mb-1">Program Kegiatan</h3>
+            <ul class="list-disc list-inside text-sm text-gray-800 ml-3 text-justify">
+              <li><span class="font-semibold text-yellow-700">Open Recruitment:</span> Seleksi anggota baru setiap tahun.</li>
+              <li><span class="font-semibold text-yellow-700">Latihan Rutin:</span> Jadwal teratur dengan pelatih kompeten.</li>
+              <li><span class="font-semibold text-yellow-700">Pelatihan & Edukasi:</span> Untuk anggota baru dan masyarakat sekitar.</li>
+              <li><span class="font-semibold text-yellow-700">Lomba & Penampilan:</span> Kompetisi dan showcase di berbagai event.</li>
+              <li><span class="font-semibold text-yellow-700">Kegiatan Sosial:</span> Baksos, pengabdian masyarakat, dan berbagi takjil.</li>
+            </ul>
+          </div>
+          <div class="flex flex-row justify-center gap-3 my-6">
+            <div class="bg-yellow-100 rounded-lg shadow p-4 text-center w-24">
+              <span class="block text-lg font-bold text-yellow-700">2024</span>
+              <span class="text-gray-700 text-xs">Tahun Berdiri</span>
+            </div>
+            <div class="bg-yellow-100 rounded-lg shadow p-4 text-center w-24">
+              <span class="block text-lg font-bold text-yellow-700">30+</span>
+              <span class="text-gray-700 text-xs">Anggota Aktif</span>
+            </div>
+            <div class="bg-yellow-100 rounded-lg shadow p-4 text-center w-24">
+              <span class="block text-lg font-bold text-yellow-700">4</span>
+              <span class="text-gray-700 text-xs">Divisi Aktif</span>
+            </div>
+          </div>
+          <div class="mt-5 mb-2">
+            <span class="font-semibold text-yellow-700">Kontak & Informasi:</span>
+            <div class="flex flex-wrap justify-center gap-4 mt-2 text-sm">
+              <span><i class="fab fa-instagram text-pink-600"></i> <a href="https://instagram.com/ukmpencaksilat_um" class="hover:underline text-yellow-700 py-2 px-3 rounded-lg active:bg-yellow-200 focus:ring-2 focus:ring-yellow-400 active:scale-95">@ukmpencaksilat_um</a></span>
+              <span><i class="fas fa-envelope text-yellow-700"></i> ukmpencaksilat_um@gmail.com</span>
+              <span><i class="fab fa-whatsapp text-green-700"></i> 0812-3456-7890</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-6 text-center text-xs text-gray-500 italic">"Bersama UKM Pencak Silat Universitas Merangin, mari lestarikan budaya dan ukir prestasi!"</div>
+      </div>
+    </section>
+  </main>
+  <a href="https://wa.me/6281234567890" class="floating-btn active:scale-95 focus:ring-4 focus:ring-yellow-300" title="Hubungi via WhatsApp" style="touch-action: manipulation;">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <script>
+    // Tombol menu hamburger
+    document.getElementById('menu-btn').addEventListener('click', function(e) {
+      e.stopPropagation();
+      const mobileMenu = document.getElementById('mobile-menu');
+      const overlay = document.querySelector('.nav-mobile-overlay');
+      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('active');
+      overlay.style.display = mobileMenu.classList.contains('active') ? 'block' : 'none';
+    });
+
+    // Tutup menu jika klik overlay
+    document.querySelector('.nav-mobile-overlay').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.add('hidden');
+      document.getElementById('mobile-menu').classList.remove('active');
+      this.style.display = 'none';
+    });
+
+    // Tutup menu hanya jika klik link di menu mobile
+    document.querySelectorAll('#mobile-menu .nav-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        // biar link tetap berjalan normal (bukan SPA)
+        const mobileMenu = document.getElementById('mobile-menu');
+        const overlay = document.querySelector('.nav-mobile-overlay');
+        if(mobileMenu.classList.contains('active')) {
+          mobileMenu.classList.add('hidden');
+          mobileMenu.classList.remove('active');
+          overlay.style.display = 'none';
+        }
+        // tidak perlu e.preventDefault(); agar langsung ke halaman tujuan
+      });
+    });
+
+    // Jangan tutup menu jika klik di dalam area menu (selain link)
+    document.getElementById('mobile-menu').addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+
+    // Tutup menu jika klik area luar menu dan luar tombol hamburger
+    document.addEventListener('click', function(e) {
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuBtn = document.getElementById('menu-btn');
+      const overlay = document.querySelector('.nav-mobile-overlay');
+      if (
+        mobileMenu.classList.contains('active') &&
+        !mobileMenu.contains(e.target) &&
+        e.target !== menuBtn &&
+        !menuBtn.contains(e.target)
+      ) {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('active');
+        overlay.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
+  <!-- Footer -->
+  <footer class="bg-yellow-700 text-yellow-100 py-8 mt-12">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <p>© 2024 UKM Pencak Silat Universitas Merangin. Seluruh hak cipta dilindungi.</p>
+      <div class="flex justify-center space-x-6 mt-2">
+        <a href="https://www.instagram.com/ukmpencaksilat_um" class="hover:text-yellow-300"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/share/1GP2gioues/" class="hover:text-yellow-300"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.tiktok.com/@ukm.pencak.silat22?_t=ZS-8xDjkCism7J&_r=1" class="hover:text-yellow-300"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </footer>
+  <!-- Floating Button -->
+  <a href="https://wa.me/6285609918885" class="floating-btn" title="Hubungi via WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <script>
+    // Hamburger menu toggle
+    document.getElementById('menu-btn').addEventListener('click', function(e) {
+      e.stopPropagation();
+      const mobileMenu = document.getElementById('mobile-menu');
+      const overlay = document.querySelector('.nav-mobile-overlay');
+      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('active');
+      overlay.style.display = mobileMenu.classList.contains('active') ? 'block' : 'none';
+    });
+
+    // Close menu when overlay is clicked
+    document.querySelector('.nav-mobile-overlay').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.add('hidden');
+      document.getElementById('mobile-menu').classList.remove('active');
+      this.style.display = 'none';
+    });
+
+    // Close menu when a menu link is clicked (on mobile)
+    document.querySelectorAll('#mobile-menu .nav-link').forEach(link => {
+      link.addEventListener('click', function() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        const overlay = document.querySelector('.nav-mobile-overlay');
+        if(mobileMenu.classList.contains('active')) {
+          mobileMenu.classList.add('hidden');
+          mobileMenu.classList.remove('active');
+          overlay.style.display = 'none';
+        }
+      });
+    });
+
+    // Optional: Close mobile menu if click outside menu and button (extra safety for UX)
+    document.addEventListener('click', function(e) {
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuBtn = document.getElementById('menu-btn');
+      const overlay = document.querySelector('.nav-mobile-overlay');
+      if (
+        mobileMenu.classList.contains('active') &&
+        !mobileMenu.contains(e.target) &&
+        e.target !== menuBtn &&
+        !menuBtn.contains(e.target)
+      ) {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('active');
+        overlay.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
